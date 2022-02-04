@@ -1,0 +1,133 @@
+1.
+https://www.codewars.com/kata/5ac698cdd325ad18a3000170
+
+SELECT name, sum(won) as won, sum(lost) as lost
+FROM fighters
+JOIN winning_moves
+ON fighters.move_id = winning_moves.id
+WHERE winning_moves.move NOT IN ('Hadoken', 'Shouoken', 'Kikoken')
+GROUP by name
+ORDER BY won DESC
+LIMIT 6
+
+2.
+https://www.codewars.com/kata/5ab828bcedbcfc65ea000099
+
+SELECT pokemon_name, (multiplier * str) AS modifiedStrength, element
+FROM pokemon
+JOIN multipliers
+ON pokemon.element_id = multipliers.id
+WHERE (multiplier * str) >= 40
+ORDER BY modifiedStrength DESC;
+
+3. 
+https://www.codewars.com/kata/590ba881fe13cfdcc20001b4
+
+SELECT *
+FROM travelers
+WHERE country NOT IN ('USA', 'Mexico', 'Canada');
+
+4. 
+https://www.codewars.com/kata/582cba7d3be8ce3a8300007c
+
+SELECT TO_DATE(TO_CHAR(s.transaction_date, 'YYYY-MM-DD'), 'YYYY-MM-DD') as day, d.name as department,
+COUNT(s.id) AS sale_count
+FROM department d
+JOIN sale s 
+ON d.id = s.department_id
+group by day, department
+order by day
+
+5. 
+https://www.codewars.com/kata/58111f4ee10b5301a7000175
+
+SELECT age, COUNT(*) AS people_count 
+FROM people
+GROUP BY age
+
+6. 
+https://www.codewars.com/kata/58113c03009b4fcc66000d29
+
+SELECT *
+FROM departments
+WHERE departments.id IN (SELECT sales.department_id 
+                        FROM sales 
+                        WHERE price > 98.00);
+                        
+7. 
+https://www.codewars.com/kata/594a8f653b5b4e8f3d000035
+
+SELECT (number1 ^ number2) AS result
+FROM decimals;
+
+8. 
+https://www.codewars.com/kata/591127cbe8b9fb05bd00004b
+
+SELECT *
+FROM books
+ORDER BY copies_sold DESC
+LIMIT 5
+
+9. 
+https://www.codewars.com/kata/5e5f09dc0a17be0023920f6f
+
+SELECT capital
+FROM countries
+WHERE continent LIKE 'Afri%' 
+AND country LIKE 'E%'
+ORDER BY capital
+LIMIT 3
+
+10. 
+https://www.codewars.com/kata/5ab7a736edbcfc8e62000007
+
+SELECT sailorsenshi.senshi_name as sailor_senshi, sailorsenshi.real_name_jpn as real_name, cats.name as cat, schools.school
+FROM sailorsenshi
+LEFT JOIN cats
+ON sailorsenshi.cat_id = cats.id
+LEFT JOIN schools
+ON sailorsenshi.school_id = schools.id
+
+11.
+https://www.codewars.com/kata/582365c18917435ab3000020
+
+select custid, custname, custstate 
+FROM customers
+
+12. 
+https://www.codewars.com/kata/5809508cc47d327c12000084
+
+SELECT *
+FROM people
+WHERE age >= 50
+ORDER BY age DESC
+
+13. 
+https://www.codewars.com/kata/5a8eb3fb57c562110f0000a1
+
+SELECT id, name, stock
+FROM products
+WHERE stock <= 2
+AND producent = 'CompanyA'
+ORDER BY id
+
+14.
+https://www.codewars.com/kata/594800ba6fb152624300006d
+
+SELECT *, LOWER(race) as race
+FROM demographics
+
+15. 
+https://www.codewars.com/kata/594633020a561e329a0000a2
+
+SELECT race, COUNT(*) AS count
+FROM demographics
+GROUP BY race
+ORDER BY count DESC
+
+16.
+https://www.codewars.com/kata/590a95eede09f87472000213
+
+SELECT name, age 
+FROM users
+WHERE age >= 18;
