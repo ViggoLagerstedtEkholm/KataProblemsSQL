@@ -1,3 +1,5 @@
+To refresh my knowledge about SQL i'm doing both harder and easier katas.
+
 1.
 https://www.codewars.com/kata/5ac698cdd325ad18a3000170
 
@@ -143,3 +145,35 @@ COUNT(*) AS total_people
 FROM people
 GROUP BY clan
 ORDER BY total_points DESC
+
+18.
+https://www.codewars.com/kata/581113dce10b531b1d0000bd/sql
+
+SELECT MIN(age) AS age_min, MAX(age) AS age_max
+FROM people
+
+19.
+https://www.codewars.com/kata/58164ddf890632ce00000220/sql
+
+SELECT age, COUNT(*) AS total_people
+FROM people
+GROUP BY age
+HAVING count(*) >= 10
+
+20. 
+https://www.codewars.com/kata/594a8fa5a2db9e5f290000c3/sql
+
+SELECT TRUNC(number1 + number2) AS towardzero
+FROM decimals
+
+21.
+https://www.codewars.com/kata/58111670e10b53be31000108/sql
+
+SELECT DISTINCT age
+FROM people
+
+22. 
+
+INSERT INTO participants VALUES ('Viggo', 21, true);
+SELECT * FROM participants;
+
