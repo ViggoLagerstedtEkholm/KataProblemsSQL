@@ -131,3 +131,15 @@ https://www.codewars.com/kata/590a95eede09f87472000213
 SELECT name, age 
 FROM users
 WHERE age >= 18;
+
+17.
+https://www.codewars.com/kata/5809575e166583acfa000083/sql
+
+SELECT 
+RANK() OVER (ORDER BY SUM(points) DESC) AS rank, 
+COALESCE(NULLIF(clan,''), '[no clan specified]') AS clan, 
+SUM(points) AS total_points, 
+COUNT(*) AS total_people
+FROM people
+GROUP BY clan
+ORDER BY total_points DESC
