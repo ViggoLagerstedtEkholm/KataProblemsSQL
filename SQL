@@ -213,9 +213,6 @@ ORDER BY products DESC
 27.
 https://www.codewars.com/kata/58113a64e10b53ec36000293/sql
 
-28.
-https://www.codewars.com/kata/58113a64e10b53ec36000293/sql
-
 SELECT d.*
 FROM departments d
 WHERE EXISTS(SELECT price
@@ -223,3 +220,99 @@ WHERE EXISTS(SELECT price
             JOIN departments
             ON sales.department_id = d.id
             WHERE sales.price > 98.00)
+
+28.
+https://www.codewars.com/kata/580fb94e12b34dd1c40001f0/sql
+
+SELECT job_title, ROUND(AVG(salary), 2)::FLOAT as average_salary, COUNT(people.id) AS total_people, ROUND(SUM(salary), 2)::FLOAT AS total_salary
+FROM people
+JOIN job
+ON people.id = job.people_id
+GROUP BY job_title
+ORDER BY average_salary DESC
+
+29. 
+https://www.codewars.com/kata/58110da0009b4f7ef80000ad/sql
+
+SELECT SUM(age) AS age_sum FROM people;
+
+30. 
+https://www.codewars.com/kata/593ed37c93350098d600001d/sql
+
+SELECT * 
+FROM companies
+ORDER BY companies.employees DESC
+
+31.
+https://www.codewars.com/kata/580918e24a85b05ad000010c/sql
+
+SELECT people.id, people.name, COUNT(toys.id) AS toy_count
+FROM people
+JOIN toys
+ON people.id = toys.people_id
+GROUP BY people.id, people.name
+
+32.
+https://www.codewars.com/kata/5811315e04adbbdb5000050e/sql
+
+SELECT id, 
+COALESCE(NULLIF(name, ''), '[product name not found]') as name, 
+price, 
+COALESCE(NULLIF(card_name, ''), '[card name not found]') as card_name,
+card_number,
+transaction_date
+FROM eusales
+WHERE price > 50
+
+33.
+https://www.codewars.com/kata/594901ba44645fd7bd00005f/sql
+
+SELECT (LENGTH(race) + BIT_LENGTH(name)) AS calculation
+FROM demographics 
+
+34.
+https://www.codewars.com/kata/5a8ec692b17101bfc70001ba/sql
+
+SELECT producer, COUNT(*) count_products_types
+FROM products
+GROUP BY producer
+ORDER BY count_products_types DESC, producer ASC
+
+35.
+https://www.codewars.com/kata/5a8f00745084d718940000c5/sql
+
+SELECT name,
+weight,
+price,
+ROUND((price*1000 / weight)::NUMERIC, 2)::FLOAT AS price_per_kg
+FROM Products 
+ORDER BY price_per_kg, name
+
+36.
+https://www.codewars.com/kata/594a6133704e4daf5d00003d/sql
+
+SELECT FLOOR(number1) AS number1, CEIL(number2) AS number2
+FROM decimals
+
+37.
+https://www.codewars.com/kata/594a691720ac16a544000075/sql
+
+SELECT SQRT(number1) AS root, LOG10(number2) AS log
+FROM decimals;
+
+38.
+https://www.codewars.com/kata/59401c25c15cbeb58d000028/sql
+
+SELECT id, name, split_part(characteristics, ',', 1) AS characteristic
+FROM monsters
+ORDER BY id
+
+39.
+https://www.codewars.com/kata/5a8d94d3ba1bb569e5000198/sql
+
+SELECT first_name, last_name
+FROM names
+WHERE first_name LIKE '______%';
+
+40.
+
