@@ -173,7 +173,53 @@ SELECT DISTINCT age
 FROM people
 
 22. 
+https://www.codewars.com/kata/590cc86f7557c0494000007e/sql
 
 INSERT INTO participants VALUES ('Viggo', 21, true);
 SELECT * FROM participants;
 
+23. 
+https://www.codewars.com/kata/5910b0d378cc2ba91400000b/sql
+
+SELECT *
+FROM students
+WHERE tuition_received NOT IN(true)
+
+24.
+https://www.codewars.com/kata/594804a218e96caa8d00051b/sql
+
+SELECT id, ascii(name) AS NAME, birthday, ascii(race) AS race
+FROM demographics
+
+25.
+https://www.codewars.com/kata/5abcf0f930488ff1a6000b66/sql
+
+SELECT *
+FROM students
+WHERE (quality1 IN('evil') AND quality2 IN('cunning')) OR 
+      (quality1 IN('brave') AND quality2 NOT IN('evil')) OR 
+      (quality1 IN ('studious') OR quality2 IN('intelligent')) OR
+      (quality1 IN ('hufflepuff') OR quality2 IN('hufflepuff'));
+
+26.
+https://www.codewars.com/kata/5a8ed96bfd8c066e7f00011a
+
+SELECT COUNT(*) AS products, country
+FROM products
+WHERE country IN ('United States of America', 'Canada')
+GROUP BY country
+ORDER BY products DESC
+
+27.
+https://www.codewars.com/kata/58113a64e10b53ec36000293/sql
+
+28.
+https://www.codewars.com/kata/58113a64e10b53ec36000293/sql
+
+SELECT d.*
+FROM departments d
+WHERE EXISTS(SELECT price
+            FROM sales
+            JOIN departments
+            ON sales.department_id = d.id
+            WHERE sales.price > 98.00)
